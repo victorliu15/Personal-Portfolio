@@ -1,0 +1,141 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="icon"
+      href="assets/ComputerIcon.png"
+    />
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              barlow: ['"barlow"', "sans-serif"],
+              roboto: ['"roboto mono"', "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% 0%;
+        }
+        50% {
+          background-position: 100% 100%;
+        }
+        100% {
+          background-position: 0% 0%;
+        }
+      }
+
+      .animated-background {
+        background: linear-gradient(45deg, #050505, #333333);
+        background-size: 400% 400%;
+        animation: gradientAnimation 10s ease infinite;
+      }
+    </style>
+    </head>
+    <body class="bg-gray-900 flex justify-center items-center">
+        <div class="w-[90vw] h-[90vh] bg-[#111111] rounded-lg flex justify-center items-center shadow-lg shadow-gray-500">
+            <div class="mx-auto bg-[#222222] w-[22%] h-[90%] rounded-lg flex flex-col items-center border border-gray-700 shadow-md shadow-gray-700">
+                <img src="assets/profileIcon.png" class="w-[50%] h-auto my-[3vh] rounded-full border-4 border-white shadow-md shadow-white">
+                <h3 class="text-lg text-white">Hi, my name is</h3>
+                <h1 class="text-4xl text-white font-bold">Victor Liu</h1>
+                <hr class="border-t-2 border-gray-700 w-[90%] mt-[2vh]">
+                <div class="flex flex-col justify-around h-[100%] my-auto items-center">
+                <div id="copyEmail" data-email="victorliu5000@gmail.com" class="flex flex-row h-[8vh] w-[100%] items-center justify-start space-x-[1vw] bg-[#333333] rounded-lg p-[2vh] shadow-lg hover:cursor-pointer hover:scale-[1.02] transition duration-300">
+                    <img src="assets/emailIcon.png" alt="" class="h-[7vh] w-auto rounded-full">
+                    <div class="flex flex-col">
+                        <p class="text-gray-400 font-bold">Email</p>
+                        <p class="text-gray-300">victorliu5000@gmail.com</p>
+                    </div>
+                </div>
+                <div id="copyPhone" data-phone="(443)-983-3212" class="flex flex-row h-[8vh] w-[100%] items-center justify-start space-x-[1vw] bg-[#333333] rounded-lg p-[2vh] shadow-lg hover:cursor-pointer hover:scale-[1.02] transition duration-300">
+                    <img src="assets/phoneIcon.png" alt="" class="h-[7vh] w-auto rounded-full">
+                    <div class="flex flex-col">
+                        <p class="text-gray-400 font-bold">Phone</p>
+                        <p class="text-gray-300">(443)-983-3212</p>
+                    </div>
+                </div>
+                <div id="copyLinkedIn" data-linkedin="victor-liu-6495b1297" class="flex flex-row h-[8vh] w-[100%] items-center justify-start space-x-[1vw] bg-[#333333] rounded-lg p-[2vh] shadow-lg hover:cursor-pointer hover:scale-[1.02] transition duration-300">
+                    <img src="assets/linkedinIcon.png" alt="" class="h-[7vh] w-auto rounded-full">
+                    <div class="flex flex-col">
+                        <p class="text-gray-400 font-bold">LinkedIn</p>
+                        <p class="text-gray-300">victor-liu-6495b1297</p>
+                    </div>
+                </div>
+                <div id="copyDevpost" data-devpost="victorliu5000" class="flex flex-row h-[8vh] w-[100%] items-center justify-start space-x-[1vw] bg-[#333333] rounded-lg p-[2vh] shadow-lg hover:cursor-pointer hover:scale-[1.02] transition duration-300">
+                    <img src="assets/devpostIcon.svg" alt="" class="h-[7vh] w-auto rounded-full">
+                    <div class="flex flex-col">
+                        <p class="text-gray-400 font-bold">Devpost</p>
+                        <p class="text-gray-300">victorliu5000</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mr-auto bg-[#222222] border border-gray-700 w-[72%] h-[90%] rounded-lg shadow-md shadow-gray-700 flex flex-col animated-background">
+            <div class="flex justify-between w-full h-[10%]">
+                <h1 class="text-4xl font-bold text-white my-[3vh] mx-[2vw]">About Me</h1>
+                <div class="ml-auto bg-zinc-800 w-[50%] rounded-tr-lg rounded-bl-lg flex items-center justify-around border-b border-r border-gray-700 shadow-md shadow-gray-700">
+                    <a href="index.html" class="text-xl tracking-wide text-white transition duration-300 border-b-2 border-transparent hover:border-white">Home</a>
+                    <a href="about.html" class="text-xl tracking-wide text-white transition duration-300 border-b-2 border-white hover:border-transparent">About</a>
+                    <a href="projects.html" class="text-xl tracking-wide text-white transition duration-300 border-b-2 border-transparent hover:border-white">Projects</a>
+                    <a href="contact.html" class="text-xl tracking-wide text-white transition duration-300 border-b-2 border-transparent hover:border-white">Contact</a>
+                </div>
+            </div>
+            <hr class="border-t-[1vh] border-gray-600 w-[7%] mt-[2vh] mx-[2vw]">
+            <hr class="border-t-[1vh] border-gray-600 w-[20%] mt-[2vh] mx-[2vw]">
+            <div class="w-[50vw] h-[50vh] mx-auto my-auto">
+                <p class="text-xl text-white">Beyond simply programming, I actively participate in local hackathons and hacking in online Cyber Security CTF competitions. Occasionally, you'll find me feasting in all you can eat hotpot and kpot restaurants or working away at a boba shop.</p>
+                <div class="grid grid-cols-2 gap-[3vh] w-full h-[60%] mt-[5vh]">
+                    <div class="bg-zinc-700 rounded-lg w-full h-[17vh] shadow-lg shadow-gray-700 border-t-2 border-gray-800 hover:scale-[1.02] hover:cursor-pointer flex flex-col items-center p-[2vh]">
+                        <div class="flex justify-center space-x-2">
+                            <img src="assets/tennisIcon.png" alt="" class="w-[10%]">
+                            <h3 class="text-xl font-bold text-white">Tennis</h3>
+                        </div>
+                        <hr class="border-t-2 border-gray-800 w-[70%] my-[1vh]">
+                        <p class="text-md text-white text-center">I've been playing tennis for the past 7 years and it's still a hobby I enjoy a lot to this day</p>
+                    </div>
+                    <div class="bg-zinc-700 rounded-lg w-full h-[17vh] shadow-lg shadow-gray-700 border-t-2 border-gray-800 hover:scale-[1.02] hover:cursor-pointer flex flex-col items-center p-[2vh]">
+                        <div class="flex justify-center space-x-2">
+                            <img src="assets/codingIcon.png" alt="" class="w-[10%]">
+                            <h3 class="text-xl font-bold text-white">Coding</h3>
+                        </div>
+                        <hr class="border-t-2 border-gray-800 w-[70%] my-[1vh]">
+                        <p class="text-md text-white text-center">Discovering my passion for coding at a young age, it's something I enjoy doing every day</p>
+                    </div>
+                    <div class="bg-zinc-700 rounded-lg w-full h-[17vh] shadow-lg shadow-gray-700 border-t-2 border-gray-800 hover:scale-[1.02] hover:cursor-pointer flex flex-col items-center p-[2vh]">
+                        <div class="flex justify-center space-x-2">
+                            <img src="assets/violinIcon.png" alt="" class="w-[10%]">
+                            <h3 class="text-xl font-bold text-white">Violin</h3>
+                        </div>
+                        <hr class="border-t-2 border-gray-800 w-[70%] my-[1vh]">
+                        <p class="text-md text-white text-center">From kindergarten to junior year, I've been continuously playing the violin</p>
+                    </div>
+                    <div class="bg-zinc-700 rounded-lg w-full h-[17vh] shadow-lg shadow-gray-700 border-t-2 border-gray-800 hover:scale-[1.02] hover:cursor-pointer flex flex-col items-center p-[2vh]">
+                        <div class="flex justify-center space-x-2">
+                            <img src="assets/swimmingIcon.png" alt="" class="w-[10%]">
+                            <h3 class="text-xl font-bold text-white">Swimming</h3>
+                        </div>
+                        <hr class="border-t-2 border-gray-800 w-[70%] my-[1vh]">
+                        <p class="text-md text-white text-center">I swam a lot when I was younger and the skills I gained still remain today</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="popup" class="hidden text-2xl font-bold fixed top-[3vh] left-1/2 transform -translate-x-1/2 bg-gray-700 text-white py-[1vh] px-[1vw] rounded-lg shadow-lg">Copied to Clipboard</div>
+    <script src="about.js"></script>
+    </body>
+</html>
