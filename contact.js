@@ -46,10 +46,10 @@ document.getElementById('copyLinkedIn').addEventListener('click', function() {
         popup.classList.add('hidden');
     }, 2000);
 });
-document.getElementById('copyDevpost').addEventListener('click', function() {
-    const devpost = this.getAttribute('data-devpost');
+document.getElementById('copyGithub').addEventListener('click', function() {
+    const github = this.getAttribute('data-github');
     const textarea = document.createElement('textarea');
-    textarea.value = devpost;
+    textarea.value = github;
     document.body.appendChild(textarea);
     textarea.select();
     document.execCommand('copy');
