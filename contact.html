@@ -46,6 +46,17 @@
         animation: gradientAnimation 10s ease infinite;
       }
     </style>
+    <script type="text/javascript"
+    src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+      (function(){
+         emailjs.init({
+           publicKey: "CJk8H1wsY0fPJ_icb",
+         });
+      })();
+   </script>
+    
   </head>
   <body class="bg-gray-900 flex justify-center items-center">
     <div class="w-[90vw] h-[90vh] bg-[#111111] rounded-lg flex justify-center items-center shadow-lg shadow-gray-500">
@@ -95,34 +106,39 @@
         </div>
       </div>
       <hr class="border-t-[1vh] border-gray-600 w-[7%] mt-[2vh] mx-[2vw]">
-      <hr class="border-t-[1vh] border-gray-600 w-[20%] mt-[2vh] mx-[2vw]">
-      <div class="w-[50vw] h-[60vh] mx-auto my-auto flex flex flex-col justify-around bg-[#303030] px-10 py-2 rounded-lg border border-gray-600 shadow-xl">
-        <div class="w-full h-[17%] flex justify-between">
-          <div class="flex flex-col w-[48%] h-full">
-            <h3 class="text-xl text-gray-200 mx-2 my-1">First Name: </h3>
-            <input class="w-full h-full py-2 px-5 text-gray-700 text-xl border border-gray-700" id="firstName" type="text" placeholder="First Name">
+      <hr class="border-t-[1vh] border-gray-600 w-[20%] my-[2vh] mx-[2vw]">
+      <form>
+        <div class="w-[50vw] h-[60vh] mx-auto my-auto flex flex flex-col justify-around bg-[#303030] px-10 py-2 rounded-lg border border-gray-600 shadow-xl">
+          <div class="w-full h-[17%] flex justify-between">
+            <div class="flex flex-col w-[48%] h-full">
+              <h3 class="text-xl text-gray-200 mx-2 my-1">First Name: </h3>
+              <input class="w-full h-full py-2 px-5 text-gray-700 text-xl border border-gray-700 rounded-md" id="firstName" type="text">
+            </div>
+            <div class="flex flex-col w-[48%] h-full">
+              <h3 class="text-xl text-white mx-2 my-1">Last Name: </h3>
+              <input class="w-full h-full py-2 px-5 text-gray-700 text-xl border border-gray-700 rounded-md" id="lastName" type="text">
+            </div>
           </div>
-          <div class="flex flex-col w-[48%] h-full">
-            <h3 class="text-xl text-white mx-2 my-1">Last Name: </h3>
-            <input class="w-full h-full py-2 px-5 text-gray-700 text-xl border border-gray-700" id="lastName" type="text" placeholder="Last Name">
+          <div class="w-full h-[17%] flex justify-between my-[2vh]">
+            <div class="flex flex-col w-full h-full">
+              <h3 class="text-xl text-white mx-2 my-1">Email: </h3>
+              <input class="w-full h-full py-2 px-5 text-gray-700 text-xl border border-gray-700 rounded-md" id="email" type="text">
+            </div>
           </div>
+          <div class="w-full h-[25%] flex justify-between">
+            <div class="flex flex-col w-full h-full">
+              <h3 class="text-2xl text-white mx-2 my-1">Message: </h3>
+              <textarea name="message" id="message" rows="4" class="block w-full rounded-md border border-gray-700 px-5 py-2 text-gray-700"></textarea>
+            </div>
+          </div>
+          <button class="bg-[#111111] mx-auto my-5 w-[20vw] h-[7vh] text-2xl font-bold text-white py-2 rounded-lg shadow-xl hover:bg-[#191919] duration-300">Submit</button>
         </div>
-        <div class="w-full h-[17%] flex justify-between my-[2vh]">
-          <div class="flex flex-col w-full h-full">
-            <h3 class="text-xl text-white mx-2 my-1">Email: </h3>
-            <input class="w-full h-full py-2 px-5 text-gray-700 text-xl border border-gray-700" id="email" type="text" placeholder="Email">
-          </div>
-        </div>
-        <div class="w-full h-[25%] flex justify-between">
-          <div class="flex flex-col w-full h-full">
-            <h3 class="text-2xl text-white mx-2 my-1">Message: </h3>
-            <input class="w-full h-full py-2 px-5 text-gray-700 text-xl border border-gray-700" id="message" type="text" placeholder="Message">
-          </div>
-        </div>
-        <button class="bg-[#111111] mx-auto my-5 w-[20vw] h-[7vh] text-2xl font-bold text-white py-2 rounded-lg shadow-xl hover:bg-[#191919] duration-300">Submit</button>
-      </div>
+      </form>
+      
     </div>
   <div id="popup" class="hidden text-2xl font-bold fixed top-[3vh] left-1/2 transform -translate-x-1/2 bg-gray-700 text-white py-[1vh] px-[1vw] rounded-lg shadow-lg">Copied to Clipboard</div>
+  <div id="sentPopup" class="hidden text-2xl font-bold fixed top-[3vh] left-1/2 transform -translate-x-1/2 bg-gray-700 text-white py-[1vh] px-[1vw] rounded-lg shadow-lg">Successfully Sent</div>
+  <div id="errorPopup" class="hidden text-2xl font-bold fixed top-[3vh] left-1/2 transform -translate-x-1/2 bg-red-500 text-black py-[1vh] px-[1vw] rounded-lg shadow-lg">Please fill out all sections before submitting</div>
   <script src="contact.js"></script>
   </body>
 </html>
