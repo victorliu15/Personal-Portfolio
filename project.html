@@ -16,7 +16,7 @@
       rel="stylesheet"
     />
     <script>
-      tailwind.config = {
+      module.exports = {
         theme: {
           extend: {
             fontFamily: {
@@ -45,16 +45,27 @@
         background-size: 400% 400%;
         animation: gradientAnimation 10s ease infinite;
       }
+      .scrollbar::-webkit-scrollbar {
+        width: 10px;
+      }
+
+      .scrollbar::-webkit-scrollbar-track { 
+        background: none;
+      }
+
+      .scrollbar::-webkit-scrollbar-thumb { 
+        background: rgba(15, 15, 15, 0.5);
+        border-radius: 10px;
+      }
     </style>
-    </head>
-    <body class="bg-gray-900 flex justify-center items-center">
-      <div class="w-[90vw] h-[90vh] bg-[#111111] rounded-lg flex justify-center items-center shadow-gray-500 shadow-inner">
-        <div class="mx-auto bg-[#222222] w-[22%] h-[90%] rounded-lg flex flex-col items-center border border-gray-700 shadow-md shadow-gray-700">
-          <img src="assets/profileIcon.png" class="w-[50%] h-auto my-[3vh] rounded-full border-4 border-white shadow-md shadow-white">
-          <h1 class="text-4xl text-white font-bold">Victor Liu</h1>
-          <hr class="border-t-2 border-gray-700 w-[90%] mt-[2vh]">
-          <h3 class="text-2xl text-gray-300 w-[75%] mx-auto my-auto text-center">“<span class="font-bold text-white">Your talent</span> determines what you can do. <span class="font-bold text-white">Your motivation</span> determines how much you're willing to do. <span class="font-bold text-white">Your attitude</span> determines how well you do it.” — Lou Holtz</h3>
-        </div>
+  </head>
+  <body class="bg-gray-900 flex justify-center items-center">
+    <div class="w-[90vw] h-[90vh] bg-[#111111] rounded-lg flex justify-center items-center shadow-gray-500 shadow-inner">
+      <div class="mx-auto bg-[#222222] w-[22%] h-[90%] rounded-lg flex flex-col items-center border border-gray-700 shadow-md shadow-gray-700">
+        <img src="assets/profileIcon.png" class="w-[50%] h-auto my-[3vh] rounded-full border-4 border-white shadow-md shadow-white">
+        <h1 class="text-4xl text-white font-bold">Victor Liu</h1>
+        <hr class="border-t-2 border-gray-700 w-[90%] mt-[2vh]">
+      </div>
       <div class="mr-auto bg-[#222222] border border-gray-700 w-[72%] h-[90%] rounded-lg shadow-md shadow-gray-700 flex flex-col animated-background">
       <div class="flex justify-between w-full h-[10%]">
         <h1 class="text-4xl font-bold text-white my-[3vh] mx-[2vw]">Projects</h1>
@@ -67,20 +78,36 @@
         </div>
         <hr class="border-t-[1vh] border-gray-500 w-[7%] mt-[2vh] mx-[2vw]">
         <hr class="border-t-[1vh] border-gray-500 w-[20%] mt-[2vh] mx-[2vw]">
-        <div class="w-[60vw] h-[60vh] mx-auto my-auto grid grid-cols-3 gap-[5vh] overflow-auto shadow-inner bg-[#303030] px-10 py-5 rounded-lg border border-gray-600 shadow-xl">
-          <div class="bg-[#191919] w-[50/3vw] h-[40vh] rounded-lg hover:scale-[1.02] duration-300 shadow-lg hover:cursor-pointer flex flex-col items-center px-3 py-5">
-            <img src="assets/ComputerIcon.png" alt="" class="w-[90%]">
+        <div class="w-[60vw] h-[60vh] mx-auto my-auto grid grid-cols-3 gap-[5vh] overflow-auto shadow-inner bg-[#303030] px-10 py-5 rounded-lg border border-gray-600 shadow-xl scrollbar scrollbar-thin scrollbar-thumb-gray-500 scrollbar-track-gray-800">
+          <div id="project1" class="bg-[#191919] w-[50/3vw] h-[40vh] rounded-lg hover:scale-[1.02] duration-300 shadow-lg hover:cursor-pointer flex flex-col items-center px-3 py-2">
+            <img src="assets/linglyIcon.png" alt="" class="w-[70%]">
             <hr class="border-t-2 border-gray-700 w-[90%] my-[2vh]">
-            <p class="text-xl font-bold text-white">Project 1</p>
+            <p class="text-xl font-bold text-white text-center my-auto">Lingly - Automatic Translation Messaging App</p>
           </div>
-          <div class="bg-white w-[50/3vw] h-[40vh]"></div>
-          <div class="bg-white w-[50/3vw] h-[40vh]"></div>
-          <div class="bg-white w-[50/3vw] h-[40vh]"></div>
-          <div class="bg-white w-[50/3vw] h-[40vh]"></div>
-          <div class="bg-white w-[50/3vw] h-[40vh]"></div>
+          <div id="project2" class="bg-[#191919] w-[50/3vw] h-[40vh] rounded-lg hover:scale-[1.02] duration-300 shadow-lg hover:cursor-pointer flex flex-col items-center px-3 py-2">
+            <img src="assets/uniflyIcon.png" alt="" class="w-[70%]">
+            <hr class="border-t-2 border-gray-700 w-[90%] my-[2vh]">
+            <p class="text-xl font-bold text-white my-auto">Unifyly - College Admissions Chat Bot</p>
+          </div>
+          <div id="project3" class="bg-[#191919] w-[50/3vw] h-[40vh] rounded-lg hover:scale-[1.02] duration-300 shadow-lg hover:cursor-pointer flex flex-col items-center px-3 py-2">
+            <img src="assets/vikeIcon.png" alt="" class="w-[70%]">
+            <hr class="border-t-2 border-gray-700 w-[90%] my-[2vh]">
+            <p class="text-xl font-bold text-white my-auto">Vike - Virtual Mouse and Keyboard</p>
+          </div>
+          <div id="project4" class="bg-[#191919] w-[50/3vw] h-[40vh] rounded-lg hover:scale-[1.02] duration-300 shadow-lg hover:cursor-pointer flex flex-col items-center px-3 py-2">
+            <img src="assets/randomBackgroundIcon.png" alt="" class="w-[70%]">
+            <hr class="border-t-2 border-gray-700 w-[90%] my-[2vh]">
+            <p class="text-xl font-bold text-white my-auto">Random Background Generator</p>
+          </div>
+          <div id="project5" class="bg-[#191919] w-[50/3vw] h-[40vh] rounded-lg hover:scale-[1.02] duration-300 shadow-lg hover:cursor-pointer flex flex-col items-center px-3 py-2">
+            <img src="assets/weatherIcon.png" alt="" class="w-[70%]">
+            <hr class="border-t-2 border-gray-700 w-[90%] my-[2vh]">
+            <p class="text-xl font-bold text-white my-auto">Weather Extension</p>
+          </div>
         </div>
       </div>
-      <div id="popup" class="hidden text-2xl font-bold fixed top-[3vh] left-1/2 transform -translate-x-1/2 bg-gray-700 text-gray-400 py-[1vh] px-[1vw] rounded-lg shadow-lg">Copied to Clipboard</div>
-    <script src="about.js"></script>
-    </body>
+    </div>
+    <div id="popup" class="hidden text-2xl font-bold fixed top-[3vh] left-1/2 transform -translate-x-1/2 bg-gray-700 text-gray-400 py-[1vh] px-[1vw] rounded-lg shadow-lg">Copied to Clipboard</div>
+    <script src="project.js"></script>
+  </body>
 </html>
