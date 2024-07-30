@@ -16,7 +16,7 @@
       rel="stylesheet"
     />
     <script>
-      module.exports = {
+      tailwind.config = {
         theme: {
           extend: {
             fontFamily: {
@@ -57,6 +57,19 @@
         background: rgba(15, 15, 15, 0.5);
         border-radius: 10px;
       }
+
+      @keyframes bounce {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        .bounce {
+            animation: bounce 0.3s ease-in-out;
+        }
     </style>
   </head>
   <body class="bg-gray-900 flex justify-center items-center">
@@ -65,15 +78,21 @@
         <img src="assets/profileIcon.png" class="w-[50%] h-auto my-[3vh] rounded-full border-4 border-white shadow-md shadow-white">
         <h1 class="text-4xl text-white font-bold">Victor Liu</h1>
         <hr class="border-t-2 border-gray-700 w-[90%] mt-[2vh]">
+        <div class="flex flex-col justify-around w-full h-full items-center">
+          <div class="bg-[#303030] w-[90%] h-[60%] rounded-lg shadow-lg py-3 px-3 flex items-center justify-center">
+            <p id="fact" class="text-white text-xl text-center"></p>
+          </div>
+          <button id="generateButton" class="hover:scale-[1.02] hover:cursor-pointer duration-300 bg-[#101010] w-[70%] h-[15%] text-white rounded-lg shadow-lg shadow-gray-700 py-3 px-2 text-lg font-bold">Generate Random Fact</button>
+        </div>
       </div>
       <div class="mr-auto bg-[#222222] border border-gray-700 w-[72%] h-[90%] rounded-lg shadow-md shadow-gray-700 flex flex-col animated-background">
       <div class="flex justify-between w-full h-[10%]">
         <h1 class="text-4xl font-bold text-white my-[3vh] mx-[2vw]">Projects</h1>
           <div class="ml-auto bg-zinc-800 w-[40vw] rounded-tr-lg rounded-bl-lg flex items-center justify-around border-b border-r border-gray-700 shadow-md shadow-gray-700">
-            <a href="index.html" class="text-xl tracking-wide text-gray-400 transition duration-300 border-b-2 border-transparent hover:border-white hover:text-white">Home</a>
-            <a href="about.html" class="text-xl tracking-wide text-gray-400 transition duration-300 border-b-2 border-transparent hover:border-white hover:text-white">About</a>
-            <a href="projects.html" class="text-xl tracking-wide text-white transition duration-300 border-b-2 border-white hover:border-transparent hover:text-white">Projects</a>
-            <a href="contact.html" class="text-xl tracking-wide text-gray-400 transition duration-300 border-b-2 border-transparent hover:border-white hover:text-white">Contact</a>
+            <a href="index.html" class="text-[1.5vw] tracking-wide text-gray-400 transition duration-300 border-b-2 border-transparent hover:border-white hover:text-white">Home</a>
+            <a href="about.html" class="text-[1.5vw] tracking-wide text-gray-400 transition duration-300 border-b-2 border-transparent hover:border-white hover:text-white">About</a>
+            <a href="projects.html" class="text-[1.5vw] tracking-wide text-white transition duration-300 border-b-2 border-white hover:border-transparent hover:text-white">Projects</a>
+            <a href="contact.html" class="text-[1.5vw] tracking-wide text-gray-400 transition duration-300 border-b-2 border-transparent hover:border-white hover:text-white">Contact</a>
           </div>
         </div>
         <hr class="border-t-[1vh] border-gray-500 w-[7%] mt-[2vh] mx-[2vw]">
@@ -82,27 +101,27 @@
           <div id="project1" class="bg-[#191919] w-[50/3vw] h-[40vh] rounded-lg hover:scale-[1.02] duration-300 shadow-lg hover:cursor-pointer flex flex-col items-center px-3 py-2">
             <img src="assets/linglyIcon.png" alt="" class="w-[70%]">
             <hr class="border-t-2 border-gray-700 w-[90%] my-[2vh]">
-            <p class="text-xl font-bold text-white text-center my-auto">Lingly - Automatic Translation Messaging App</p>
+            <p class="text-xl font-bold text-white text-center my-auto">Lingly<br>Automatic Translation Messaging App</p>
           </div>
           <div id="project2" class="bg-[#191919] w-[50/3vw] h-[40vh] rounded-lg hover:scale-[1.02] duration-300 shadow-lg hover:cursor-pointer flex flex-col items-center px-3 py-2">
             <img src="assets/uniflyIcon.png" alt="" class="w-[70%]">
             <hr class="border-t-2 border-gray-700 w-[90%] my-[2vh]">
-            <p class="text-xl font-bold text-white my-auto">Unifyly - College Admissions Chat Bot</p>
+            <p class="text-xl font-bold text-white my-auto text-center">Unifly<br>College Admissions Chat Bot</p>
           </div>
           <div id="project3" class="bg-[#191919] w-[50/3vw] h-[40vh] rounded-lg hover:scale-[1.02] duration-300 shadow-lg hover:cursor-pointer flex flex-col items-center px-3 py-2">
             <img src="assets/vikeIcon.png" alt="" class="w-[70%]">
             <hr class="border-t-2 border-gray-700 w-[90%] my-[2vh]">
-            <p class="text-xl font-bold text-white my-auto">Vike - Virtual Mouse and Keyboard</p>
+            <p class="text-xl font-bold text-white my-auto text-center">Vike<br>Virtual Mouse and Keyboard</p>
           </div>
           <div id="project4" class="bg-[#191919] w-[50/3vw] h-[40vh] rounded-lg hover:scale-[1.02] duration-300 shadow-lg hover:cursor-pointer flex flex-col items-center px-3 py-2">
             <img src="assets/randomBackgroundIcon.png" alt="" class="w-[70%]">
             <hr class="border-t-2 border-gray-700 w-[90%] my-[2vh]">
-            <p class="text-xl font-bold text-white my-auto">Random Background Generator</p>
+            <p class="text-xl font-bold text-white my-auto text-center">Random Background Generator</p>
           </div>
           <div id="project5" class="bg-[#191919] w-[50/3vw] h-[40vh] rounded-lg hover:scale-[1.02] duration-300 shadow-lg hover:cursor-pointer flex flex-col items-center px-3 py-2">
             <img src="assets/weatherIcon.png" alt="" class="w-[70%]">
             <hr class="border-t-2 border-gray-700 w-[90%] my-[2vh]">
-            <p class="text-xl font-bold text-white my-auto">Weather Extension</p>
+            <p class="text-xl font-bold text-white my-auto text-center">Weather Extension</p>
           </div>
         </div>
       </div>
